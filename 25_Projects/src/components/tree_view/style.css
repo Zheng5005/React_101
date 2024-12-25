@@ -1,0 +1,9 @@
+.menu-list-container{
+    width: 350px;
+    background: rgb(0, 71, 110);
+}
+
+.menu-item{
+    align-items: center;
+    cursor: pointer;
+}
