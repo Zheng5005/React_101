@@ -12,6 +12,8 @@ import QRCodeGenerator from './components/qrcode/QRCode.jsx'
 import ThemeSwitch from './components/theme_switch/ThemeSwitch.jsx'
 import Scroll from './components/scrolls/scroll_indicator/Scroll.jsx'
 import TabTest from './components/tabs/tab-test.jsx'
+import ModalTest from './components/modal_popup/modal-test.jsx'
+import ProfileFinder from './components/profile_finder/ProfileFinder.jsx'
 
 function App() {
  return (
@@ -32,6 +34,8 @@ function App() {
 
       <Scroll url={'https://dummyjson.com/products?limit=50'}/>
       <TabTest />
+      <ModalTest />
+      <ProfileFinder />
     </>
   )
 }
