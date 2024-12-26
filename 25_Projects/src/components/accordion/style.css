@@ -31,11 +31,11 @@
     color: #ffffff;
     display: flex;
     justify-content: space-between;
-    align-item: center;
+    align-items: center;
     cursor: pointer;
 }
 
 .content{
-    color: #ffffff;
+    color: #614101;
     height: auto;
 }

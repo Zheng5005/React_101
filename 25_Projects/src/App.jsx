@@ -1,43 +1,41 @@
-import './App.css'
-import Accordion from './components/accordion/Accordion'
-import RandomColor from './components/random_color/RandomColor'
-import StarRating from './components/star_rating/StarRating'
-import ImageSlider from './components/image_slider/ImageSlider'
-import LoadMore from './components/load_more/LoadMore'
-
-import TreeView from './components/tree_view/TreeView'
-import sideMenu from './components/tree_view/data.js'
-
-import QRCodeGenerator from './components/qrcode/QRCode.jsx'
-import ThemeSwitch from './components/theme_switch/ThemeSwitch.jsx'
-import Scroll from './components/scrolls/scroll_indicator/Scroll.jsx'
-import TabTest from './components/tabs/tab-test.jsx'
-import ModalTest from './components/modal_popup/modal-test.jsx'
-import ProfileFinder from './components/profile_finder/ProfileFinder.jsx'
+import "./App.css";
+import FeatureFlag from "./components/feature_flag/FeatureFlag.jsx";
+import FeatureFlagGlobalState from "./components/feature_flag/context/Context.jsx";
 
 function App() {
- return (
+  return (
     <>
-      <Accordion />
-      <RandomColor />
-      <StarRating noOfStars={10}/> {/* npm i react-icons*/}
+        <FeatureFlagGlobalState>
+          <FeatureFlag />
+        </FeatureFlagGlobalState>
 
-      {/* The image slide kinda works, but it doesn't show any images, but you can slide through for some reason */}
-      <ImageSlider url={"https://picsum.photos/v2/list"} limit={"10"} page={"1"}/>
+      {/* The code below has every component on it's own, but the code above will render everything, but if you want to see an specific component
+          in action just comment the code above and put the component you want (you should import it)
+       */}
+      {/*
+        <Accordion />
+        <RandomColor />
+        <StarRating noOfStars={10} /> -> npm i react-icons
 
-      <LoadMore />
+        <ImageSlider
+        url={"https://picsum.photos/v2/list"}
+        limit={"10"}
+        page={"1"}
+        />
 
-      <TreeView menus={sideMenu}/>
-
-      <QRCodeGenerator /> {/* npm i react-qr-code */}
-      <ThemeSwitch />
-
-      <Scroll url={'https://dummyjson.com/products?limit=50'}/>
-      <TabTest />
-      <ModalTest />
-      <ProfileFinder />
+        <LoadMore />
+        <TreeView menus={sideMenu} />
+        <QRCodeGenerator /> -> npm i react-qr-code
+        
+        <ThemeSwitch />
+        <Scroll url={"https://dummyjson.com/products?limit=50"} />
+        <TabTest />
+        <ModalTest />
+        <ProfileFinder />
+        <Search />
+       */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
