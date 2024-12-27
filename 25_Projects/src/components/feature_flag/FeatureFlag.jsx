@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { FeatureFlagsContext } from "./context/Context";
 
 import Accordion from "../accordion/Accordion";
@@ -12,15 +12,19 @@ import sideMenu from "../tree_view/data.js";
 
 import QRCodeGenerator from "../qrcode/QRCode";
 import ThemeSwitch from "../theme_switch/ThemeSwitch";
-import Scroll from "../scroll_indicator/Scroll";
+import Scroll from "../scrolls/scroll_indicator/Scroll.jsx";
+
 import TabTest from "../tabs/tab-test";
 import ModalTest from "../modal_popup/modal-test";
 import ProfileFinder from "../profile_finder/ProfileFinder";
 import Search from "../search_autocomplete/search";
+import ScrollTopBottom from "../scrolls/scroll_top_bottom/ScrollTopBottom.jsx";
+import ScrollBottomTop from "../scrolls/scroll_top_bottom/ScrollBottomTop.jsx";
 
 
 function FeatureFlag() {
   const { loading, enableFlags } = useContext(FeatureFlagsContext);
+  const bottomRef = useRef()
 
   const componentsToRender = [
     {
@@ -91,9 +95,17 @@ function FeatureFlag() {
 
   return (
     <div>
-      {componentsToRender.map((componentItem) =>
-        checkEnableFlags(componentItem.key) ? componentItem.component : null
-      )}
+      <div>
+       <ScrollTopBottom reference={bottomRef}/> 
+      </div>
+      <div>
+        {componentsToRender.map((componentItem) =>
+          checkEnableFlags(componentItem.key) ? componentItem.component : null
+        )}
+      </div>
+      <div ref={bottomRef}>
+        <ScrollBottomTop />
+      </div>
     </div>
   );
 }

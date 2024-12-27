@@ -7,7 +7,7 @@ const dummyAPIResponse = {
   showTreeView: true,
   showQRCodeGenerator: false,
   showLightAndDarkmode: true,
-  showScroll: true,
+  showScroll: false,
   showTabs: true,
   showModal: true,
   showProfile: true,
